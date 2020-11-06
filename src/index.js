@@ -1,6 +1,6 @@
-export * from './src/stories/Button';
+import {Button} from './stories/Button';
 
-
+export {Button};
 // import React from 'react';
 // import ReactDOM from 'react-dom';
 // import './index.css';
