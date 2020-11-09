@@ -1,6 +1,6 @@
 {
   "name": "testappstory",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": false,
   "dependencies": {
     "@babel/cli": "^7.12.1",
