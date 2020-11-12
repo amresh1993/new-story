@@ -5,23 +5,25 @@ import './button.css';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const [color, setColor] = useState(backgroundColor)
-  console.log(color)
+export const Button = ({ primary, backgroundColor="blue", size, label, ...props }) => {
+  const [count, setCount] = useState(0)
+  // console.log(props)
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
+  return (<>
+  <p>Count : {count}</p>
     <button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={color && { backgroundColor:color }}
-      onClick={()=>{
-        console.log("clicked")
-        setColor("red")
+      style={{ backgroundColor: "blue",color:"#fff" }}
+      onClick={() => {
+        // console.log("clicked")
+        setCount((oldCount)=>oldCount+1)
       }}
-      // {...props}
+    {...props}
     >
       {label}
     </button>
+  </>
   );
 };
 
@@ -49,8 +51,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
+  // backgroundColor: null,
+  // primary: false,
   size: 'medium',
-  onClick: undefined,
+  // onClick: undefined,
 };
